@@ -1,0 +1,241 @@
+/* Paleta de Cores Oficial WEG */
+:root {
+    --weg-blue-primary: #00579D;   /* Azul Institucional WEG */
+    --weg-blue-dark: #003B6F;      /* Azul Marinho Profundo */
+    --weg-blue-light: #E6F0F8;     /* Azul Suave para destaques */
+    --weg-accent: #0082C8;         /* Azul Ciano Técnico */
+    --bg-page: #F4F6F9;            /* Cinza Gelo Industrial */
+    --bg-card: #FFFFFF;            /* Branco Puro */
+    --text-main: #1E293B;          /* Cinza Chumbo para leitura */
+    --text-muted: #475569;         /* Cinza Médio */
+    --border-color: #CBD5E1;       /* Borda sutil */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header-weg {
+    background: linear-gradient(135deg, var(--weg-blue-dark) 0%, var(--weg-blue-primary) 100%);
+    color: #FFFFFF;
+    padding: 48px 0;
+    border-bottom: 5px solid var(--weg-accent);
+    margin-bottom: 32px;
+}
+
+.brand-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.header-weg h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #E2E8F0;
+    max-width: 750px;
+}
+
+/* Cards de Conteúdo */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 59, 111, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.context-card {
+    border-left: 6px solid var(--weg-blue-primary);
+}
+
+.context-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    color: var(--weg-blue-primary);
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+}
+
+.context-header h2 {
+    margin-bottom: 0;
+}
+
+.location-tag {
+    background-color: var(--weg-blue-light);
+    color: var(--weg-blue-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--weg-blue-primary);
+}
+
+.card p {
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.section-intro {
+    color: var(--text-muted);
+    margin-bottom: 20px !important;
+}
+
+/* Grid de Explicação */
+.grid-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background-color: var(--bg-page);
+    padding: 20px;
+    border-radius: 6px;
+    border-top: 3px solid var(--weg-blue-primary);
+}
+
+.feature-box h3 {
+    color: var(--weg-blue-dark);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.feature-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Código Inline e Blocos */
+code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: var(--weg-blue-light);
+    color: var(--weg-blue-dark);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: #0F172A;
+    color: #F8FAFC;
+    padding: 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 12px;
+    border-left: 4px solid var(--weg-accent);
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 0.92rem;
+}
+
+/* Tabela */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+th {
+    background-color: var(--weg-blue-primary);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+tr:hover {
+    background-color: var(--bg-page);
+}
+
+/* Badges CRUD */
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-create { background-color: #DCFCE7; color: #166534; }
+.badge-read   { background-color: var(--weg-blue-light); color: var(--weg-blue-dark); }
+.badge-update { background-color: #FEF3C7; color: #92400E; }
+.badge-delete { background-color: #FEE2E2; color: #991B1B; }
+
+/* Rodapé */
+.footer-weg {
+    background-color: var(--weg-blue-dark);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 40px;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    color: #94A3B8;
+    margin-top: 4px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .header-weg h1 {
+        font-size: 1.65rem;
+    }
+    .card {
+        padding: 20px;
+    }
+}

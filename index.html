@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro de Motores | Projeto CentroWEG - SENAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-weg">
+        <div class="container header-content">
+            <div class="brand-badge">CENTRO<strong>WEG</strong> &bull; SENAI</div>
+            <h1>Sistema de Cadastro de Motores em Python</h1>
+            <p class="subtitle">Documentação técnica do algoritmo monolítico desenvolvido para gestão e teste de especificações de motores elétricos.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Seção de Contexto / Onde foi feito -->
+        <section class="card context-card">
+            <div class="context-header">
+                <h2>Contexto do Desenvolvimento</h2>
+                <span class="location-tag">Jaraguá do Sul - SC</span>
+            </div>
+            <p>
+                Este projeto foi desenvolvido durante as atividades práticas de programação no <strong>CentroWEG</strong>, a unidade do <strong>SENAI</strong> localizada dentro do parque fabril da <strong>WEG</strong> em Jaraguá do Sul, Santa Catarina.
+            </p>
+            <p>
+                O objetivo do exercício foi construir uma aplicação monolítica em arquivo único (<code>cadastro_motores.py</code>) capaz de simular um sistema CRUD (Create, Read, Update, Delete) em memória RAM, utilizando apenas estruturas nativas do Python sem dependência de bancos de dados externos.
+            </p>
+        </section>
+
+        <!-- Seção de Explicação da Arquitetura -->
+        <section class="card">
+            <h2>Como o Código Funciona</h2>
+            <p class="section-intro">O programa é estruturado em três pilares principais dentro do mesmo arquivo:</p>
+            
+            <div class="grid-features">
+                <div class="feature-box">
+                    <h3>1. Armazenamento em Memória</h3>
+                    <p>Utiliza uma lista global (<code>motores = []</code>) funcionando como um array dinâmico. Cada motor é representado por um <strong>dicionário</strong> contendo chaves como <code>id</code>, <code>modelo</code>, <code>fabricante</code>, <code>potencia_cv</code>, <code>tensao_v</code> e <code>rpm</code>.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>2. Modularização por Funções</h3>
+                    <p>Cada operação do sistema é isolada em uma função específica: <code>cadastrar_motor()</code>, <code>listar_motores()</code>, <code>buscar_motor()</code>, <code>atualizar_motor()</code> e <code>excluir_motor()</code>, facilitando a manutenção e leitura.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>3. Validação e Loop Principal</h3>
+                    <p>Blocos <code>try/except</code> impedem que entradas inválidas (como texto no lugar de RPM ou potência) quebrem a execução. A função <code>menu()</code> mantém o sistema ativo em loop <code>while True</code> até o usuário encerrar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de Funções -->
+        <section class="card">
+            <h2>Mapeamento das Funções</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Função</th>
+                            <th>Operação CRUD</th>
+                            <th>Responsabilidade no Sistema</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>cadastrar_motor()</code></td>
+                            <td><span class="badge badge-create">Create</span></td>
+                            <td>Coleta dados via terminal, valida tipos numéricos e adiciona novo dicionário à lista com ID autoincremental.</td>
+                        </tr>
+                        <tr>
+                            <td><code>listar_motores()</code></td>
+                            <td><span class="badge badge-read">Read</span></td>
+                            <td>Percorre o array <code>motores</code> e exibe todos os equipamentos cadastrados formatados no console.</td>
+                        </tr>
+                        <tr>
+                            <td><code>buscar_motor()</code></td>
+                            <td><span class="badge badge-read">Read (Filtro)</span></td>
+                            <td>Filtra registros por ID exato ou correspondência parcial (case-insensitive) no modelo ou fabricante.</td>
+                        </tr>
+                        <tr>
+                            <td><code>atualizar_motor()</code></td>
+                            <td><span class="badge badge-update">Update</span></td>
+                            <td>Localiza o motor pelo ID e permite alterar campos específicos mantendo os valores atuais caso fiquem em branco.</td>
+                        </tr>
+                        <tr>
+                            <td><code>excluir_motor()</code></td>
+                            <td><span class="badge badge-delete">Delete</span></td>
+                            <td>Identifica o índice do registro na lista e o remove da memória utilizando o método <code>.pop()</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Trecho de Código Exemplo -->
+        <section class="card">
+            <h2>Estrutura de Dados Utilizada</h2>
+            <p>Exemplo de como os motores são estruturados na memória antes da interação do usuário:</p>
+            <pre><code>motores = [
+    {
+        "id": 1,
+        "modelo": "W22 IR3 Premium",
+        "fabricante": "WEG",
+        "potencia_cv": 10.0,
+        "tensao_v": "220/380V",
+        "rpm": 1750,
+    }
+]</code></pre>
+        </section>
+
+    </main>
+
+    <footer class="footer-weg">
+        <div class="container">
+            <p>Desenvolvido no <strong>CentroWEG (SENAI)</strong> &bull; Jaraguá do Sul, SC</p>
+            <p class="footer-note">Documentação de Projeto Acadêmico &bull; Python 3</p>
+        </div>
+    </footer>
+
+</body>
+</html>
